@@ -1,0 +1,54 @@
+
+<html>
+  <head>
+  <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.css" type="text/css">
+
+  </head>
+  <body>
+
+
+
+  <div class="container">
+    <h3>There are <span style="color: darkorange;">{{number}}</span> Customers </h3>
+    <BR>
+    <form action="event" method="POST">
+      {% csrf_token %}
+      <h4>Select one of the Customers to show</h4>
+      <select name="select" class='custom-select mb-3' style="width: 100px;">
+        {% for C in customers %}
+      <option value ={{C.id}}>{{C.id}}</option>
+        {% endfor %}
+      </select> 
+      <p><input type="submit" class="btn btn-primary" style="width: 100px;"></p>
+    </form>
+
+  </div>
+  <div class="container">
+<div><h4>Showing all customers</h4></div>  
+<table class="table center ">
+<th><td>Gender</td><td>City</td><td>Email</td><td>Company</td><td>Title</td><td>longitude</td><td>Latitude</td></th>
+{% for C in customers %}
+
+<tr>
+<td>{{C.first_name}} {{C.last_name}} </td>  
+<td style="color: rgb(228, 42, 9);">{{C.gender}}</td> 
+ 
+<td style="color: darkslategrey;">{{C.email}}</td>  
+<td style="color: darkgoldenrod;">{{C.company}}</td>  
+<td style="color: darkgreen;">{{C.title}}</td>
+<td style="color: darkviolet;">{{C.city}}</td> 
+<td style="color: darkgreen;">{{C.longitude}}</td>
+<td style="color: darkgreen;">{{C.latitude}}</td>
+<tr>
+{% endfor %}
+</table>
+</div>
+  </body>
+</html>
+
+
+
+  
+
+
+
