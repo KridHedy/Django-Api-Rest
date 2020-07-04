@@ -3,7 +3,7 @@
 This is a REST API to retrieve customers informations.
 
 ## Installation
-For best pratices,ze can create a new environment adn activate it to hold the app.
+For best pratices, we can create a new environment adn activate it to hold the app.
 I use conda to create my env, but you can use python,etc.
 
 first of all you need to go to the project directory.
