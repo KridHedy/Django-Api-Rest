@@ -43,7 +43,7 @@ Accessing the localhost:  [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
 All customers are shown there on the index page, we can select a customer `ID` and submit the selection to retrieve data about that specific customer.
 ## Notes
-I have used [Django Rest Api Framework](https://www.django-rest-framework.org/) which already provides all the CRUD and HTML and it can be accessed through this link [http://127.0.0.1:8000/framework](http://127.0.0.1:8000/framework).
+I have used [Django Rest Api Framework](https://www.django-rest-framework.org/) which already provides all the CRUD (I have restricted the CRUD to [Get,Post,Head] Only) and HTML and it can be accessed through this link [http://127.0.0.1:8000/framework](http://127.0.0.1:8000/framework).
 
 ## Contribution
 Hedy Anouar Krid
