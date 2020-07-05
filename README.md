@@ -23,7 +23,7 @@ python manage.py command
 ```
 Please note that:
 - it will take some time to process.
-- I have shared my `API key` just for the matter of speeding up the testing. you can change that inside of the `command.py` script inside of `management/commands` forlder.
+- I have shared my `API key` just for the matter of speeding up the testing. you can change that inside of the `command.py` script inside of `management/commands` folder.
 - Since this step have already been done, we might run into an exception:
 `Table 'myapi_customer' already exists`. you can just delete the database file in order for it to work properly. if so please run the following command to migrate the changes to the database:
 ```bash
