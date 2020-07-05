@@ -11,7 +11,7 @@ class Command(BaseCommand):
 		# NO NEED FOR ERROR-HANDLING
 		#since it always creates a new database if that one does not exist
 		con = sqlite3.connect('db.sqlite3')
-		# LOGIC HERE
+		### Please include your api_key
 		api_key='AIzaSyBpP6Zdn5_Y1arUh3p6fCl9bxGjsy61Dm0'
 		df = pd.read_csv('customers.csv')
 
@@ -31,22 +31,29 @@ class Command(BaseCommand):
 
 				df.loc[i, 'latitude'] = lat
 				df.loc[i, 'longitude'] = lon
+			else:
+				print('Error' : api_response_dict['status'])
 		#send data to sqlite databse
 	 
 		df.to_sql(name='myapi_customer', con=con)
 
-#####		
+		
 
+######### DEBUGGING THE DATABSE INTRUCTIONS  ###########
 
-### FETCH ALL DATA INSIDE OUR TABLE TO VERIFY
+### Fetch all data inside of our table
 # con = sqlite3.connect('db.sqlite3')
-# #query ="SELECT * FROM myapi_customer"
+# query ="SELECT * FROM myapi_customer"
+
+### fetch all tables
 # query = "SELECT name FROM sqlite_master WHERE type='table' ORDER BY name"
+
+### chekcing table structre
 # #query="PRAGMA table_info(Customer)"
+### choose and execute a query
+
 # cursor = con.execute(query)
-
 # rows = cursor.fetchall()
-
 # for row in rows:
 # 	print(row)
 

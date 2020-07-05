@@ -21,22 +21,27 @@ As requested in `Question 1`, we will use a Django management commad to import o
 ```bash
 python manage.py command 
 ```
-Please note that it will take some time to process.
-in this step we are importing all data inside our file to the database.
+Please note that:
+- it will take some time to process.
+- I have shared my `API key` just for the matter of speeding up the testing. you can change that inside of the `command.py` script inside of `management/commands` forlder.
+- Since this step have already been done, we might run into an exception:
+`Table 'myapi_customer' already exists`. you can just delete the database file in order for it to work properly. if so please run the following command to migrate the changes to the database:
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+In this step we are importing all data inside our file to the database.
 Besides to that we are adding two columns `longitude` and `latitude` for each `city`.
 
-Since this step have already been done, we might run into an exception:
-`Table 'myapi_customer' already exists`.
-
-then we can process to running the server.
+Then we can proceed to running the server.
 
 ```bash
 python manage.py runserver
 ```
-then we access the localhost: 
-[http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+Accessing the localhost:  [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-all customers are shown, there on the index page, we can select a customer id and submit the selection to retrieve data about that specific customer.
+All customers are shown there on the index page, we can select a customer `ID` and submit the selection to retrieve data about that specific customer.
 ## Notes
 I have used [Django Rest Api Framework](https://www.django-rest-framework.org/) which already provides all the CRUD and HTML and it can be accessed through this link [http://127.0.0.1:8000/framework](http://127.0.0.1:8000/framework).
 
